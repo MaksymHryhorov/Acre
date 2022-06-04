@@ -3,7 +3,6 @@ package org.hryhorov.Controllers;
 import org.hryhorov.dao.PersonDAO;
 import org.hryhorov.models.Person;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
