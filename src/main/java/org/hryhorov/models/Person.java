@@ -1,16 +1,41 @@
 package org.hryhorov.models;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 public class Person {
-    private String name;
     private int id;
 
-    public Person(String name, int id) {
-        this.name = name;
+    @NotEmpty(message = "Name shouldn't be empty")
+    @Size(min = 2, max = 30, message = "2+ symbols")
+    private String name;
+
+    @Min(value = 5, message = "Age should be more then 5 ")
+    private int age;
+
+    @NotEmpty(message = "Name shouldn't be empty")
+    @Email(message = "Email should be valid")
+    private String email;
+
+    public Person(int id, String name, int age, String email) {
         this.id = id;
+        this.name = name;
+        this.age = age;
+        this.email = email;
     }
 
-    public Person(){
+    public Person() {
 
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -21,11 +46,19 @@ public class Person {
         this.name = name;
     }
 
-    public int getId() {
-        return id;
+    public int getAge() {
+        return age;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
