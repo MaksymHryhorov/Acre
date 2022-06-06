@@ -3,8 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>New Person</title>
+    <style>
+        label {
+            color: green;
+            font-size: 23px;
+        }
+        a {
+            text-decoration: none;
+            font-size: 20px;
+            color: gray;
+        }
+    </style>
 </head>
 <body>
+
+<i style="font-size: 23px">Creating:</i>
+<br>
+<br/>
 
 <form th:method="POST" th:action="@{/people}" th:object="${person}">
     <label for="name">Enter name: </label>
@@ -22,7 +37,11 @@
     <div style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Name error</div>
     <br/>
 
-    <input type="submit" value="Create!"/>
+    <br/>
+    <hr/>
+    <a href="/people">Back</a>
+    <p><input style="width: 125px" type="submit" value="Create"/></p>
+
 </form>
 
 </body>

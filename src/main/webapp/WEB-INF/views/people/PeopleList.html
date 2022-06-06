@@ -3,18 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        a {
+            text-decoration: none;
+            font-size: 20px;
+            color: gray;
+        }
+    </style>
 </head>
 <body>
 
+<i style="font-size: 23px">Persons:</i>
+<br>
+<br/>
 <div th:each="person : ${people}">
-    <a th:href="@{/people/{id}(id=${person.getId()})}"
-       th:text="${person.getName() + ', ' + person.getAge()}">user</a>
+    <a class="na" th:href="@{/people/{id}(id=${person.getId()})}"
+       th:text="${person.getName() + '; ' + person.getEmail()}">user</a>
 </div>
 
 <br/>
 <hr/>
 
-<a href="/people/new">Create new Person</a>
+<a href="/people/new">Create</a>
 
 </body>
 </html>
