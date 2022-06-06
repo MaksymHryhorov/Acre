@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
-@RequestMapping("/first")
 public class FirstController {
 
-    @GetMapping("/hi")
-    public String helloPage(HttpServletRequest request) {
+    @GetMapping()
+    public String helloPage(HttpServletRequest request,
+                            Model model) {
         String name = request.getParameter("name");
         String surname = request.getParameter("surname");
 
-        System.out.println("Hello " + name + " " + surname);
+        model.addAttribute("mes","Hello " + name + " " + surname);
 
         return "first/hi";
     }
@@ -28,7 +28,7 @@ public class FirstController {
                           Model model) {
 
         //System.out.println("Hello " + name + " " + surname);
-        model.addAttribute("message","Hello " + name + " " + surname);
+        model.addAttribute("message","Goodbye " + name + " " + surname);
 
         return "first/goodbye";
     }

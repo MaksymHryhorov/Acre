@@ -3,11 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Hello</title>
+    <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
 </head>
 
 <body>
-    <p>Hello</p>
-    <a href="/first/goodbye">Say Goodbye</a> <a href="/exit"> Exit</a>
-    <a href="/first/hi?name=Tom&surname=Cat">Request with parameters</a>
+
+<p th:text="${mes}"></p>
+<a href="/goodbye">Say Goodbye</a>
+<br/>
+<a href="/?name=Tom&surname=Cat">Request with parameters</a>
+<br/>
+<a href="/calculator?a=10&b=10&action=add">Open Calculator with get parameters</a>
+<br/>
+<a href="/people">Link to People List</a>
+<br/>
+<a href="/exit"> Exit</a>
+
 </body>
 </html>

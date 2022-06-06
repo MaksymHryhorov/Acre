@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Goodbye</title>
+    <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
 </head>
 <body>
-    <p>Goodbye</p>
-    <a href="/first/hi">Say Hi</a> or <a href="/exit"> Exit</a>
-
     <p th:text="${message}"/>
+    <a href="/">Say Hi</a>
+    <br/>
+    <a href="/goodbye?name=Tom&surname=Cat">Request with parameters</a>
+    <br/>
+    <a href="/exit"> Exit</a>
+    <br/>
 
 </body>
 </html>
